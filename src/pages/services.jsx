@@ -9,9 +9,16 @@ import ai from "../assets/ai.png";
 function Services() {
   return (
     <div className="text-center px-4 py-10">
-      <h2 className="text-3xl font-bold text-blue-950">SERVICES</h2>
-      <p className="text-[26px] text-gray-700 font-semibold">What We Do</p>
-
+      <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="h-0.5 w-16 bg-blue-950"></div>
+        <span className="text-blue-950 tracking-widest text-3xl font-bold">
+          SERVICES
+        </span>
+        <div className="h-0.5 w-16 bg-blue-950"></div>
+      </div>
+      <h3 className="text-4xl md:text-5xl font-semibold text-gray-900 ">
+        What We Do
+      </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
           {/* Image */}

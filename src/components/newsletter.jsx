@@ -4,7 +4,7 @@ function Newsletter() {
   return (
     <section className="bg-white min-h-screen flex items-center justify-center px-4">
       {/* Centered background container */}
-      <div className="relative w-full max-w-5xl h-[450px] rounded-xl overflow-hidden bg-[url('/newsletter_bg.jpg')] bg-cover bg-center flex items-center justify-center">
+      <div className="relative w-full max-w-5xl h-112.5 rounded-xl overflow-hidden bg-[url('/newsletter_bg.jpg')] bg-cover bg-center flex items-center justify-center">
         {/* Blue overlay */}
         <div className="absolute inset-0 bg-blue-950/70"></div>
 

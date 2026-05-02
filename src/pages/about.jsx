@@ -7,9 +7,16 @@ function About() {
       <div>
         <img src={about} alt="" className="object-cover  h-full w-full" />
       </div>
-      <div className="flex flex-col gap-3 px-2">
-        <h2 className="text-4xl font-bold text-blue-950 ">About Us</h2>
-        <h3 className="text-[24px] md:text-[36px] font-medium">
+      <div className="flex flex-col gap-3 mb-6 px-2">
+        <div className="flex items-center justify-center gap-4 ">
+          <div className="h-0.5 w-16 bg-blue-950"></div>
+          <span className="text-blue-950 tracking-widest text-3xl font-bold">
+            ABOUT US
+          </span>
+          <div className="h-0.5 w-16 bg-blue-950"></div>
+        </div>
+
+        <h3 className="text-4xl md:text-5xl font-semibold text-gray-900 ">
           Empowering youth through affordable tech education!
         </h3>
         <p className="text-[16px]">

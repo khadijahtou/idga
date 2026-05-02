@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Mainlayout from "./layout/mainlayout";
 import Home from "./pages/home";
+import Greenrise from "./components/greenrise";
 
 const route = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ const route = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/greenrise",
+        element: <Greenrise />,
       },
     ],
   },

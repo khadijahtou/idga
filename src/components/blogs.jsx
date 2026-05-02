@@ -6,9 +6,14 @@ import { Link } from "react-router";
 function Blogs() {
   return (
     <div className="flex flex-col gap-4 p-3">
-      <h2 className="text-3xl font-bold text-center text-blue-950">
-        LATEST BLOGS AND INSIGHTS
-      </h2>
+      <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="h-0.5 w-16 bg-blue-950"></div>
+        <span className="text-3xl font-bold text-center text-blue-950">
+          LATEST BLOGS AND INSIGHTS
+        </span>
+        <div className="h-0.5 w-16 bg-blue-950"></div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 p-2 gap-4">
         <div className="bg-gray-100 shadow-md rounded-lg ">
           <img

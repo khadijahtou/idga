@@ -1,5 +1,6 @@
 import React from "react";
 import projectImage from "../assets/project.jpeg";
+import { Link } from "react-router";
 
 function Project() {
   return (
@@ -29,10 +30,11 @@ function Project() {
                 address environmental challenges and create a sustainable
                 future.
               </p>
-
-              <button className="border border-white rounded-full px-6 py-2 hover:bg-white hover:text-blue-900 transition h-12 w-46">
-                READ MORE
-              </button>
+              <Link to="/greenrise">
+                <button className="border border-white rounded-full px-6 py-2 hover:bg-white hover:text-blue-900 transition h-12 w-46">
+                  READ MORE
+                </button>
+              </Link>
             </div>
           </div>
         </div>
