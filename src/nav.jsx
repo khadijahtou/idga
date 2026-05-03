@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "./assets/idga-logo.png";
+import { path } from "framer-motion/client";
 // import logoIcon from "../assets/logoIcoasn.png";
 
 function Nav() {
@@ -9,11 +10,13 @@ function Nav() {
 
   const links = [
     { path: "/", name: "Home" },
-    { path: "/projects", name: "Projects" },
-    { path: "/about", name: "About" },
-    { path: "/skills", name: "Skills" },
     { path: "/process", name: "Process" },
-    { path: "/contact", name: "Contact" },
+    { path: "/about", name: "About" },
+    { path: "/project", name: "Project" },
+    { path: "/services", name: "Services" },
+    { path: "/testimonials", name: "Testimonials" },
+    { path: "/blog", name: "Blog" },
+    { path: "/newsletter", name: "Newsletter" },
   ];
   return (
     <div>
