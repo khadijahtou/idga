@@ -5,7 +5,7 @@ import Project from "./project";
 import Services from "./services";
 import Expertise from "../components/expertise";
 import Newsletter from "../components/newsletter";
-import Blogs from "../components/blogs";
+import Blogs from "./blogs";
 import Process from "../components/process";
 import Testimonials from "../components/testimonials";
 

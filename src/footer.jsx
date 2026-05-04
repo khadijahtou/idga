@@ -2,68 +2,85 @@ import React from "react";
 import logo from "./assets/idga-bg.png";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
 
 function Footer() {
   return (
     <footer className="bg-blue-950 text-slate-300">
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-14 grid md:grid-cols-3 gap-14">
-        {/* <div className="flex items-center gap-3 mb-6">
-          <img src={logo} alt="" className="h-13" />
-          <h2 className="text-white text-xl font-semibold">
-            Ideas & Data Global Academy
-          </h2>
-          <p className="text-sm leading-7">
-            Building capacity in data science, technology, and research through
-            world-class training, certification, and consulting services.
-          </p>
-        </div> */}
-
-        <div>
-          <h3 className="text-white font-semibold tracking-wide  text-[18px]md:text-[24px] mb-4">
+        {/* CONTACT */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <h3 className="text-white font-semibold tracking-wide text-[20px] md:text-[24px] mb-6">
             CONTACT
           </h3>
 
-          <div className="space-y-5 text-sm">
-            <div className="flex gap-4">
-              <MapPin className="mt-1 text-slate-400 text-[20px] md:text-[40px]" />
-              <span className="md:text-[18px] text-[16px]">
+          <div className="space-y-6 text-sm">
+            <motion.div custom={1} variants={fadeUp} className="flex gap-4">
+              <MapPin className="text-slate-400" size={22} />
+              <span className="md:text-[16px] leading-relaxed">
                 No. 1A Opp LEA Kofar Sauri Road, Katsina
               </span>
-            </div>
+            </motion.div>
 
-            <div className="flex gap-4">
-              <Phone className="text-slate-400 text-[20px] md:text-[40px]" />
-              <span className="md:text-[18px] text-[16px]">
-                +234 809 460 7273
-              </span>
-            </div>
+            <motion.div custom={2} variants={fadeUp} className="flex gap-4">
+              <Phone className="text-slate-400" size={22} />
+              <span className="md:text-[16px]">+234 809 460 7273</span>
+            </motion.div>
 
-            <div className="flex gap-4">
-              <Mail className="text-slate-400 text-[20px] md:text-[40px]" />
-              <span className="md:text-[18px] text-[16px]">
-                admin@idga.com.ng
-              </span>
-            </div>
-            <div className="flex gap-5 mt-6 text-slate-400">
-              <FaInstagram className="hover:text-white cursor-pointer transition text-[20px] md:text-[40px]" />
-              <FaFacebook className="hover:text-white cursor-pointer transition text-[20px] md:text-[40px]" />
-              <FaLinkedin className="hover:text-white cursor-pointer transition text-[20px] md:text-[40px] " />
-              <FaTwitter className="hover:text-white cursor-pointer transition text-[20px] md:text-[40px] " />
-            </div>
+            <motion.div custom={3} variants={fadeUp} className="flex gap-4">
+              <Mail className="text-slate-400" size={22} />
+              <span className="md:text-[16px]">admin@idga.com.ng</span>
+            </motion.div>
+
+            {/* SOCIALS */}
+            <motion.div
+              custom={4}
+              variants={fadeUp}
+              className="flex gap-5 mt-6 text-slate-400"
+            >
+              <FaInstagram className="hover:text-white transition cursor-pointer text-xl" />
+              <FaFacebook className="hover:text-white transition cursor-pointer text-xl" />
+              <FaLinkedin className="hover:text-white transition cursor-pointer text-xl" />
+              <FaTwitter className="hover:text-white transition cursor-pointer text-xl" />
+            </motion.div>
           </div>
 
-          <div className="mt-4">
-            <h4 className="text-white text-sm md:text-[18px] font-medium mb-2">
+          <div className="mt-8">
+            <h4 className="text-white text-[16px] md:text-[18px] font-medium mb-2">
               Office Hours
             </h4>
-            <p className="text-sm md:text-[18px]">Mon – Fri: 8:00am – 5:00pm</p>
+            <p className="text-sm md:text-[16px]">Mon – Fri: 8:00am – 5:00pm</p>
           </div>
-        </div>
-        <div>
-          <h3 className="text-white font-semibold tracking-wide mb-4 text-[18px] md:text-[24px]">
+        </motion.div>
+
+        {/* COMPANY */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <h3 className="text-white font-semibold tracking-wide mb-6 text-[20px] md:text-[24px]">
             COMPANY
           </h3>
-          <ul className="space-y-4 text-sm md:text-[18px]">
+
+          <ul className="space-y-4 text-sm md:text-[16px]">
             {[
               "About Us",
               "Policy",
@@ -71,53 +88,64 @@ function Footer() {
               "Career",
               "Blog",
               "Contact Us",
-            ].map((item) => (
-              <li
+            ].map((item, i) => (
+              <motion.li
                 key={item}
+                custom={i}
+                variants={fadeUp}
                 className="hover:text-white transition cursor-pointer"
               >
                 {item}
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </div>
-        <div>
-          <div>
-            <h3 className="text-white font-semibold tracking-wide mb-4 text-[18px] md:text-[24px]">
-              SERVICES
-            </h3>
-            <ul className="space-y-4 text-sm md:text-[18px]">
-              {[
-                "M&E Training",
-                "Certifications",
-                "Robotics",
-                "Research & Development",
-                "Climate Change",
-                "AI & Machine Learning",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="hover:text-white transition cursor-pointer"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        </motion.div>
+
+        {/* SERVICES */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <h3 className="text-white font-semibold tracking-wide mb-6 text-[20px] md:text-[24px]">
+            SERVICES
+          </h3>
+
+          <ul className="space-y-4 text-sm md:text-[16px]">
+            {[
+              "M&E Training",
+              "Certifications",
+              "Robotics",
+              "Research & Development",
+              "Climate Change",
+              "AI & Machine Learning",
+            ].map((item, i) => (
+              <motion.li
+                key={item}
+                custom={i}
+                variants={fadeUp}
+                className="hover:text-white transition cursor-pointer"
+              >
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
+
+      {/* BOTTOM BAR */}
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between text-sm">
-          <p>
+          <p className="text-center md:text-left">
             © {new Date().getFullYear()} Ideas & Data Global Academy. All rights
             reserved.
           </p>
 
           <div className="flex gap-6 mt-3 md:mt-0">
-            <span className="hover:text-white cursor-pointer">
+            <span className="hover:text-white cursor-pointer transition">
               Privacy Policy
             </span>
-            <span className="hover:text-white cursor-pointer">
+            <span className="hover:text-white cursor-pointer transition">
               Terms of Service
             </span>
           </div>

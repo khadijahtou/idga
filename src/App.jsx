@@ -6,9 +6,15 @@ import About from "./pages/about";
 import Services from "./pages/services";
 import Project from "./pages/project";
 import Testimonials from "./components/testimonials";
-import Blogs from "./components/blogs";
+import Blogs from "./pages/blogs";
 import Newsletter from "./components/newsletter";
 import Process from "./components/process";
+import Summit from "./components/summit";
+import Sanitation from "./components/sanitation";
+import Robotics from "./components/robotics";
+import ConsultationForm from "./components/consult";
+import CourseEnrollmentForm from "./components/enrollement";
+import NewsletterForm from "./components/newsletterform";
 
 const route = createBrowserRouter([
   {
@@ -50,6 +56,30 @@ const route = createBrowserRouter([
       {
         path: "/process",
         element: <Process />,
+      },
+      {
+        path: "/summit",
+        element: <Summit />,
+      },
+      {
+        path: "/sanitation",
+        element: <Sanitation />,
+      },
+      {
+        path: "/robotics",
+        element: <Robotics />,
+      },
+      {
+        path: "/enrollment",
+        element: <CourseEnrollmentForm />,
+      },
+      {
+        path: "/consultation",
+        element: <ConsultationForm />,
+      },
+      {
+        path: "/newsletterform",
+        element: <NewsletterForm />,
       },
     ],
   },
