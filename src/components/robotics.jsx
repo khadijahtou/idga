@@ -12,8 +12,8 @@ function Robotics() {
   return (
     <section className="pb-20 overflow-x-hidden">
       {/* HERO */}
-      <div className="bg-[url('/roboticsbg.jpeg')] bg-cover bg-center relative h-80 sm:h-95 md:h-112.5 w-full flex items-center justify-center px-4 text-center">
-        <div className="absolute inset-0 bg-blue-950/75" />
+      <div className="bg-[url('/roboticsbg.jpeg')] bg-cover bg-center relative h-80 sm:h-96 md:h-112.5 w-full flex items-center justify-center px-4 text-center">
+        <div className="absolute inset-0 bg-blue-900/70" />
 
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -26,9 +26,9 @@ function Robotics() {
             Ideas & Data Global Academy Conducts Robotics Training for Youth in
             Kano State
           </h3>
-          <p className="text-white mt-3 text-sm sm:text-base">
+          <h4 className="text-white mt-3 text-sm sm:text-base">
             September 9, 2024
-          </p>
+          </h4>
         </motion.div>
       </div>
 
@@ -43,47 +43,70 @@ function Robotics() {
         <p>
           In a bold step towards shaping the future of technology-driven
           innovation, Ideas & Data Global Academy (IDGA) recently conducted an
-          engaging robotics training for youth aged 15 to 17 in Kano State.
+          engaging robotics training for youth aged 15 to 17 in Kano State. This
+          initiative is part of the Academy’s commitment to fostering skills in
+          emerging technologies among young minds, providing them with the tools
+          and knowledge to thrive in the digital age.
         </p>
 
         <p>
-          The training introduced participants to the fundamentals of robotics
-          through hands-on projects where they built, programmed, and controlled
-          robots while developing teamwork and problem-solving skills.
+          The training program, which took place in Kano State, introduced
+          participants to the fundamentals of robotics. With hands-on activities
+          and practical projects, the young learners were able to build,
+          program, and control robots, gaining invaluable experience in
+          problem-solving, teamwork, and critical thinking.
+        </p>
+
+        <p>
+          The course instructors at IDGA designed the curriculum to ensure that
+          it was not only educational but also fun and interactive. Students
+          explored the world of robotics through the construction of their own
+          functional robot models, using cutting-edge technology and guided by
+          expert trainers.
         </p>
 
         <motion.img
           whileHover={{ scale: 1.01 }}
           transition={{ duration: 0.3 }}
           src={robotics}
-          alt="Robotics training session"
+          alt=""
           className="w-full rounded-xl shadow-md"
         />
 
         <p>
-          The curriculum was intentionally interactive and practical, allowing
-          students to construct functional robot models under expert guidance.
+          The Academy’s focus on nurturing young talent aligns with its broader
+          mission to empower the youth of Nigeria, especially in Kano State,
+          with the skills necessary for the future of work. By giving these
+          teens early exposure to robotics, the training aims to spark an
+          interest in technology and engineering, potentially guiding them
+          toward careers in STEM (Science, Technology, Engineering, and
+          Mathematics).
         </p>
 
-        <p>
-          Early exposure to robotics aims to spark long-term interest in STEM
-          careers and prepare youth for the future of work.
-        </p>
-
-        <h5 className="text-lg sm:text-xl font-semibold text-blue-950 mt-10">
+        <h5 className="text-lg sm:text-xl font-semibold text-blue-950">
           A Step Towards the Future
         </h5>
 
         <p>
-          This training forms part of the Green Rising Initiative, highlighting
-          the role of robotics and technology in environmental monitoring,
-          disaster response, and sustainable innovation.
+          The Kano robotics training is part of the Green Rising Initiative,
+          which emphasizes the role of technology in solving global challenges,
+          such as climate change. Robotics plays a crucial role in environmental
+          monitoring, disaster response, and green technologies, making it a key
+          element in the Academy’s broader sustainability goals.
         </p>
 
         <p>
-          IDGA continues to prepare Nigerian youth for participation in the
-          global digital economy through accessible and impactful tech
-          education.
+          As the world increasingly shifts towards automation and artificial
+          intelligence, IDGA continues to lead efforts in preparing Nigerian
+          youth to participate in the global digital economy. This training is
+          only the beginning, with more planned programs aimed at increasing
+          access to digital learning, connectivity, and innovation.
+        </p>
+
+        <p>
+          Stay tuned for more updates on our upcoming programs and initiatives
+          as we continue to transform young lives through education and
+          technology.
         </p>
       </motion.div>
 
@@ -93,7 +116,7 @@ function Robotics() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto px-4 sm:px-6 md:px-0 mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="max-w-6xl mx-auto px-4 sm:px-6 md:px-0 mt-14 grid grid-cols-2 lg:grid-cols-3 gap-6"
       >
         {[robotics1, robotics2, robotics3, robotics4, robotics5, robotics6].map(
           (img, i) => (
@@ -102,7 +125,7 @@ function Robotics() {
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.3 }}
               src={img}
-              alt="Robotics gallery"
+              alt=""
               className="w-full h-55 object-cover rounded-xl shadow-md"
             />
           ),
