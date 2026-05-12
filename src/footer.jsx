@@ -55,10 +55,37 @@ function Footer() {
               variants={fadeUp}
               className="flex gap-5 mt-6 text-slate-400"
             >
-              <FaInstagram className="hover:text-white transition cursor-pointer text-xl" />
-              <FaFacebook className="hover:text-white transition cursor-pointer text-xl" />
-              <FaLinkedin className="hover:text-white transition cursor-pointer text-xl" />
-              <FaTwitter className="hover:text-white transition cursor-pointer text-xl" />
+              <motion.a
+                href="https://www.instagram.com/ideas_and_dataglobalacademy?igshid=MW84dmk0Y3dkYXdj"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover="hover"
+              >
+                <FaInstagram className="hover:text-white transition cursor-pointer text-xl" />
+              </motion.a>
+              <motion.a
+                href="https://www.facebook.com/ideasanddata"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover="hover"
+              >
+                <FaFacebook className="hover:text-white transition cursor-pointer text-xl" />
+              </motion.a>
+              <motion.a
+                href="https://www.linkedin.com/company/ideas-and-data-global-academy"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover="hover"
+              >
+                <FaLinkedin className="hover:text-white transition cursor-pointer text-xl" />
+              </motion.a>
+              <motion.a
+                href="https://twitter.com/IDGA_NG"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTwitter className="hover:text-white transition cursor-pointer text-xl" />
+              </motion.a>
             </motion.div>
           </div>
 
