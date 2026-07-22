@@ -54,25 +54,31 @@ const ProjectDetails = () => {
   return (
     <main className="bg-white min-h-screen">
       {/* Hero Image */}
-      <div className="relative h-112.5">
+      {/* Hero Image */}
+      <div className="relative h-[450px]">
+        {/* Hero Image */}
         <img
           src={project.heroImage?.url}
           alt={project.heroImage?.alt || project.title}
           className="w-full h-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/50 flex items-end">
-          <div className="max-w-6xl mx-auto w-full px-6 pb-12">
-            <p className="text-white/80 mb-3">
+        {/* Blue Overlay */}
+        <div className="absolute inset-0 bg-blue-950/60 flex items-center justify-center">
+          <div className="max-w-4xl w-full px-6 text-center">
+            {/* Project Type
+            <p className="text-white/80 text-sm md:text-base uppercase tracking-widest mb-4">
               {project.type === "project" ? "Project" : "Blog"}
-            </p>
+            </p> */}
 
-            <h1 className="text-4xl md:text-5xl font-bold text-white max-w-4xl">
+            {/* Title */}
+            <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
               {project.title}
             </h1>
 
+            {/* Published Date */}
             {project.publishedAt && (
-              <p className="text-white/80 mt-4">
+              <p className="text-white/80 mt-5 text-sm md:text-base">
                 {new Date(project.publishedAt).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
@@ -85,13 +91,13 @@ const ProjectDetails = () => {
       </div>
 
       {/* Content */}
-      <article className="max-w-4xl mx-auto px-6 py-16">
+      <article className="max-w-4xl mx-auto px-6 py-5  text-gray-700">
         {project.blocks?.map((block, index) => {
           if (block.type === "text") {
             return (
               <div
                 key={index}
-                className="mb-8 prose prose-lg max-w-none text-slate-400"
+                className="mb-6 prose prose-lg md:prose-xxl max-w-none text-gray-700"
                 dangerouslySetInnerHTML={{
                   __html: block.content,
                 }}

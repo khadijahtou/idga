@@ -96,6 +96,7 @@ function Project() {
                   transition={{ duration: 0.4 }}
                   className="space-y-4"
                 >
+                  <div></div>
                   {/* Category */}
                   {project.category?.[0] && (
                     <p className="text-blue-200 text-sm uppercase tracking-widest font-medium">
@@ -104,7 +105,7 @@ function Project() {
                   )}
 
                   {/* Title */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white relative">
                     {project.title}
                   </h3>
 

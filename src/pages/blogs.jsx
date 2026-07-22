@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import api from "../api/axios";
 
 function Blogs() {
@@ -74,11 +74,12 @@ function Blogs() {
               className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100"
             >
               {/* IMAGE */}
-              <div className="overflow-hidden">
+              <div className="relative h-96 overflow-hidden group">
                 <img
                   src={blog.heroImage?.url}
                   alt={blog.heroImage?.alt || blog.title}
-                  className="w-full h-64 object-cover transition duration-500 hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-700
+                           group-hover:scale-110 group-hover:blur-sm"
                 />
                 {/* Dark Blue Overlay */}
                 <div
@@ -89,14 +90,7 @@ function Blogs() {
                            flex flex-col justify-end p-8
                            opacity-0 group-hover:opacity-100
                            transition-all duration-500"
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileHover={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="space-y-4"
-                  ></motion.div>
-                </div>
+                ></div>
               </div>
 
               {/* CONTENT */}
