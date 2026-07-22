@@ -80,6 +80,23 @@ function Blogs() {
                   alt={blog.heroImage?.alt || blog.title}
                   className="w-full h-64 object-cover transition duration-500 hover:scale-110"
                 />
+                {/* Dark Blue Overlay */}
+                <div
+                  className="absolute inset-0 bg-linear-to-t
+                           from-blue-950/95
+                           via-blue-900/70
+                           to-transparent
+                           flex flex-col justify-end p-8
+                           opacity-0 group-hover:opacity-100
+                           transition-all duration-500"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileHover={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="space-y-4"
+                  ></motion.div>
+                </div>
               </div>
 
               {/* CONTENT */}

@@ -8,6 +8,7 @@ import Newsletter from "../components/newsletter";
 import Blogs from "./blogs";
 import Process from "../components/process";
 import Testimonials from "../components/testimonials";
+import Team from "./team";
 
 function Home() {
   return (
@@ -17,7 +18,9 @@ function Home() {
       <About />
       <Project />
       <Services />
+
       <Expertise />
+      <Team />
       <Testimonials />
       <Blogs />
       <Newsletter />

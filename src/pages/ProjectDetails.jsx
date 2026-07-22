@@ -91,7 +91,7 @@ const ProjectDetails = () => {
             return (
               <div
                 key={index}
-                className="mb-8 prose prose-lg max-w-none"
+                className="mb-8 prose prose-lg max-w-none text-slate-400"
                 dangerouslySetInnerHTML={{
                   __html: block.content,
                 }}

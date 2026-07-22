@@ -110,7 +110,7 @@ const BlogDetails = () => {
             return (
               <div
                 key={index}
-                className="mb-8 prose prose-lg max-w-none"
+                className="mb-8 prose prose-lg max-w-none text-slate-400"
                 dangerouslySetInnerHTML={{
                   __html: block.content || "",
                 }}
@@ -148,7 +148,7 @@ const BlogDetails = () => {
             return (
               <div
                 key={index}
-                className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10"
+                className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10"
               >
                 {block.gallery?.filter(Boolean).map((image, imageIndex) => (
                   <div key={imageIndex}>
