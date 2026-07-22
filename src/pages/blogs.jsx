@@ -14,7 +14,7 @@ function Blogs() {
   const fetchLatestBlogs = async () => {
     try {
       const response = await api.get(
-        "/content?type=blog&status=published&limit=3",
+        "/content?type=blog&status=published&limit=3&sort=newest",
       );
 
       setBlogs(response.data.content || []);
@@ -43,14 +43,14 @@ function Blogs() {
         <div className="h-0.5 w-16 bg-blue-950"></div>
       </motion.div>
 
-      {/* Loading */}
+      {/* LOADING */}
       {loading && (
         <div className="text-center">
           <p className="text-gray-500">Loading latest blogs...</p>
         </div>
       )}
 
-      {/* Empty State */}
+      {/* EMPTY STATE */}
       {!loading && blogs.length === 0 && (
         <div className="text-center">
           <p className="text-gray-500">No blogs available at the moment.</p>
@@ -76,20 +76,32 @@ function Blogs() {
               {/* IMAGE */}
               <div className="overflow-hidden">
                 <img
-                  src={blog.heroImage}
-                  alt={blog.title}
+                  src={blog.heroImage?.url}
+                  alt={blog.heroImage?.alt || blog.title}
                   className="w-full h-64 object-cover transition duration-500 hover:scale-110"
                 />
               </div>
 
               {/* CONTENT */}
               <div className="p-5 flex flex-col gap-3">
+                {/* CATEGORY + PUBLISHED DATE */}
                 <h4 className="text-sm text-gray-500 flex gap-3">
-                  {blog.category || "Insights"}
+                  <span>{blog.category?.[0]}</span>
+
                   <span>•</span>
-                  {new Date(blog.createdAt).toLocaleDateString()}
+
+                  <span>
+                    {blog.publishedAt
+                      ? new Date(blog.publishedAt).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })
+                      : "Recently published"}
+                  </span>
                 </h4>
 
+                {/* TITLE */}
                 <Link
                   to={`/blogs/${blog.slug}`}
                   className="text-blue-950 font-semibold text-lg leading-snug hover:underline"
@@ -97,6 +109,14 @@ function Blogs() {
                   {blog.title}
                 </Link>
 
+                {/* EXCERPT */}
+                {blog.excerpt && (
+                  <p className="text-gray-600 text-sm line-clamp-3">
+                    {blog.excerpt}
+                  </p>
+                )}
+
+                {/* READ MORE */}
                 <Link
                   to={`/blogs/${blog.slug}`}
                   className="mt-2 inline-block border border-gray-300 text-gray-600 px-4 py-2 rounded-md

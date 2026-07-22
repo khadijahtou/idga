@@ -54,7 +54,7 @@ const ProjectDetails = () => {
   return (
     <main className="bg-white min-h-screen">
       {/* Hero Image */}
-      <div className="relative h-[450px]">
+      <div className="relative h-112.5">
         <img
           src={project.heroImage?.url}
           alt={project.heroImage?.alt || project.title}

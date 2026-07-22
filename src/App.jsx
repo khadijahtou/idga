@@ -16,7 +16,7 @@ import ConsultationForm from "./components/consult";
 import CourseEnrollmentForm from "./components/enrollement";
 import NewsletterForm from "./components/newsletterform";
 import ProjectDetails from "./pages/ProjectDetails";
-
+import BlogDetails from "./pages/BlogDetails";
 const route = createBrowserRouter([
   {
     path: "/",
@@ -53,6 +53,10 @@ const route = createBrowserRouter([
       {
         path: "/blog",
         element: <Blogs />,
+      },
+      {
+        path: "/blogs/:slug",
+        element: <BlogDetails />,
       },
       {
         path: "/newsletter",
