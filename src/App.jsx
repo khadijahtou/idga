@@ -15,6 +15,7 @@ import Robotics from "./components/robotics";
 import ConsultationForm from "./components/consult";
 import CourseEnrollmentForm from "./components/enrollement";
 import NewsletterForm from "./components/newsletterform";
+import ProjectDetails from "./pages/ProjectDetails";
 
 const route = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const route = createBrowserRouter([
       {
         path: "/project",
         element: <Project />,
+      },
+      {
+        path: "/projects/:slug",
+        element: <ProjectDetails />,
       },
       {
         path: "/testimonials",
