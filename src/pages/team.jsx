@@ -38,7 +38,10 @@ function Team() {
               whileHover={{ y: -5 }}
               className="bg-white border rounded-xl shadow-sm overflow-hidden"
             >
-              <img src={member.img} className="h-80 w-full object-fill p-2" />
+              <img
+                src={member.img}
+                className="h-70 md:h-80 w-full object-fill p-2"
+              />
               <div className="p-4">
                 <h4 className="font-semibold text-lg">{member.name}</h4>
                 <p className="text-gray-600">{member.role}</p>
