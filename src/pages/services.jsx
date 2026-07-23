@@ -79,7 +79,7 @@ function Services() {
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full h-64 object-cover transition duration-500 hover:scale-110"
+                className="w-full h-64 object-fill transition duration-500 hover:scale-110"
               />
             </div>
 

@@ -40,7 +40,7 @@ function Team() {
             >
               <img
                 src={member.img}
-                className="h-70 md:h-80 w-full object-fill p-2"
+                className="h-90 md:h-80 w-full object-fill p-2"
               />
               <div className="p-4">
                 <h4 className="font-semibold text-lg">{member.name}</h4>

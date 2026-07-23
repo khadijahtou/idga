@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import api from "../api/axios";
 
 export default function ConsultationForm() {
   const [form, setForm] = useState({
@@ -10,14 +11,45 @@ export default function ConsultationForm() {
     date: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-  const handleChange = (e) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleSubmit = (e) => {
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
-    alert("Consultation request sent!");
+
+    try {
+      setLoading(true);
+
+      const response = await api.post("/consultations", form);
+
+      alert(
+        response.data.message || "Consultation request submitted successfully.",
+      );
+
+      setForm({
+        fullName: "",
+        email: "",
+        phone: "",
+        service: "",
+        date: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Failed to submit consultation:", error);
+
+      alert(
+        error.response?.data?.message ||
+          "Unable to submit consultation request. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -111,8 +143,12 @@ export default function ConsultationForm() {
           />
 
           {/* Button */}
-          <button className="bg-blue-950 text-white py-3 rounded-lg text-lg hover:opacity-90 transition">
-            Submit Request
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-blue-950 text-white py-3 rounded-lg text-lg hover:bg-blue-900 transition disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {loading ? "Submitting..." : "Submit Request"}
           </button>
         </form>
       </motion.div>

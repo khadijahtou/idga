@@ -17,6 +17,8 @@ import CourseEnrollmentForm from "./components/enrollement";
 import NewsletterForm from "./components/newsletterform";
 import ProjectDetails from "./pages/ProjectDetails";
 import BlogDetails from "./pages/BlogDetails";
+import AllBlogs from "./pages/AllBlogs";
+import PrivacyPolicy from "./pages/policy";
 const route = createBrowserRouter([
   {
     path: "/",
@@ -59,6 +61,10 @@ const route = createBrowserRouter([
         element: <BlogDetails />,
       },
       {
+        path: "/allBlogs",
+        element: <AllBlogs />,
+      },
+      {
         path: "/newsletter",
         element: <Newsletter />,
       },
@@ -89,6 +95,10 @@ const route = createBrowserRouter([
       {
         path: "/newsletterform",
         element: <NewsletterForm />,
+      },
+      {
+        path: "/policy",
+        element: <PrivacyPolicy />,
       },
     ],
   },

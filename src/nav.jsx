@@ -16,6 +16,7 @@ function Nav() {
     { path: "/testimonials", name: "Testimonials" },
     { path: "/blog", name: "Blog" },
     { path: "/newsletter", name: "Newsletter" },
+    { path: "/policy", name: "PrivacyPolicy" },
   ];
 
   return (

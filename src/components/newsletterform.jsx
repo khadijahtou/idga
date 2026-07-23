@@ -1,25 +1,45 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import api from "../api/axios";
 
 function NewsletterForm() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email) return;
+    if (!email.trim()) {
+      setError("Please enter your email address.");
+      return;
+    }
 
-    setLoading(true);
+    try {
+      setLoading(true);
+      setMessage("");
+      setError("");
 
-    setTimeout(() => {
-      setLoading(false);
-      setSuccess(true);
+      const response = await api.post("/newsletter", {
+        email,
+      });
+
+      setMessage(
+        response.data.message || "Successfully subscribed to our newsletter!",
+      );
+
       setEmail("");
+    } catch (error) {
+      console.error("Newsletter subscription failed:", error);
 
-      setTimeout(() => setSuccess(false), 3000);
-    }, 1000);
+      setError(
+        error.response?.data?.message ||
+          "Unable to subscribe. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -66,7 +86,9 @@ function NewsletterForm() {
           placeholder="Enter your email address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-950"
+          required
+          disabled={loading}
+          className="flex-1 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-950 disabled:bg-gray-100"
         />
 
         <motion.button
@@ -80,14 +102,25 @@ function NewsletterForm() {
         </motion.button>
       </motion.form>
 
-      {/* Success message */}
-      {success && (
+      {/* Success Message */}
+      {message && (
         <motion.p
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 1, y: 0 }}
           className="text-green-600 text-center mt-4 font-medium"
         >
-          Successfully subscribed 🎉
+          {message}
+        </motion.p>
+      )}
+
+      {/* Error Message */}
+      {error && (
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-red-600 text-center mt-4 font-medium"
+        >
+          {error}
         </motion.p>
       )}
     </motion.div>
